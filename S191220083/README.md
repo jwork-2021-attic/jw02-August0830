@@ -1,7 +1,5 @@
 # Readme
 
-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
-
 ## 任务一
 
 1.example 类图
