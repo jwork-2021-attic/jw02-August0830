@@ -11,19 +11,21 @@ public class Flocks  {
         private final int r;
         private final int g;
         private final int b;
-
+        private final int rank;
         private Position position;
 
-        Monster(int r, int g, int b) {
+        Monster(int r, int g, int b,int rank) {
             this.r = r;
             this.g = g;
             this.b = b;
+            this.rank = rank;
         }
 
         public int rank() {
             //return ((this.r<<16) | (this.g<<8) | (this.b));
             //return (this.r/100 + this.g/100 + this.b/100)%count;
-            return (this.b+this.g);
+            //return (this.b+this.g-256);
+            return rank;
         }
 
         @Override
@@ -65,7 +67,7 @@ public class Flocks  {
         for(int i=0;i<this.count;++i){
             int blue = (r.nextInt(256)+255)/2;
             int green = (r.nextInt(1+i)+255)/2;
-            monsterList[i]=new Monster(red,blue,green);
+            monsterList[i]=new Monster(red,blue,green,i+1);
         }
     }
 

@@ -23,7 +23,7 @@ public class Scene {
 
     public static void main(String[] args) throws IOException {
 
-        int count = 10;
+        int count = 64;
         Line line = new Line(count);
         int[] sequence = Scene.randomSequence(count);
         Flocks flocks = new Flocks(count);
@@ -33,7 +33,11 @@ public class Scene {
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        Sorter sorter = new BubbleSorter();
+        //Sorter sorter = new BubbleSorter();
+
+        //Sorter sorter = new QuickSorter();
+
+        Sorter sorter = new HeapSorter();
 
         theGeezer.setSorter(sorter);
 

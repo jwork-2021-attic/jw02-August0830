@@ -57,6 +57,8 @@ public class Geezer {
     }
 
     private void execute(String step) {
+        if(step == "")
+            return ;
         String[] couple = step.split("<->");
         Flocks.getMonsterByRank(Integer.parseInt(couple[0]))
                 .swapPosition(Flocks.getMonsterByRank(Integer.parseInt(couple[1])));
